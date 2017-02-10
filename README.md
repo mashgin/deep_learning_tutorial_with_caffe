@@ -10,7 +10,7 @@ This tutorial assumes you are comfortable with python and have a basic idea of w
 
 If these are completely new to you have a look at this [tutorial](http://adilmoujahid.com/posts/2016/06/introduction-deep-learning-python-caffe/). Chapters 1, 2 and 3 helped me out a lot. For those of you who have more time or are more serious about getting into deep learning this [book](http://neuralnetworksanddeeplearning.com/) is very well written. 
 
-### Getting Caffe running 
+### Getting Caffe running in Docker
 
 I would strongly advise you to get Caffe working with [Docker](https://www.docker.com/products/docker#). Go ahead and install Docker following the instructions in the link. Verify your installations with : `sudo docker run hello-world `
 
