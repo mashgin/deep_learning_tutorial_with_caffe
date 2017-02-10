@@ -116,7 +116,7 @@ After running `./train.py` you will see a bunch of iterations fly by and some te
 
 Then, we execute `./classify.py.` This will show you to what level of accuracy it was able to learn during training. (hopefully : `Accuracy: 100.00%`) 
 
-If you execute `./classify.py 1` you can see first hand the images we want to classify and the networks output. (Press any key to continue to the next image)
+If you execute `./classify.py 1` you can see first hand the images we want to classify and the networks output. (Press any key to continue to the next image) (Currently images not displaying...working on it!)
 
 Now that we roughly know what’s happening let’s actually build the Neural Net and look at the code. 
 
