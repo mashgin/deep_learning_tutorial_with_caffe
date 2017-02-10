@@ -332,7 +332,7 @@ In other words to make this more vivid and coming back to the baby example:
 
 If we have a little boy who's sister stole his toy. He will pull her hair (applying weights). To the parent, this is a wrong outcome. the desired outcome ('label') would have been to ask her nicely to give it back. The parent (SoftMaxWithLoss) will put the boy in timeout, for the boy to realize his actions were not correct and maybe think of what he should have done differently  (backpropagation). He will then adjust his behavior (apply different weights) the next time his sister steals his toy. Once the boy is grown and he has learned which weights to apply he no longer needs his parents to discipline him (SoftMax). 
 
-Yes, yes I know this would leave me extremly unsatisfied, something that you are feeling right now probably. But just trust me that this is what's happening. And as I said if you are unsatisfied, check out the book.
+Yes, yes I know this would leave me extremly unsatisfied, something that you are feeling right now probably. But just trust me that this is what's happening. And as I said if you are unsatisfied, check out the book or [here's](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/) also a good explanation
 
 One thing which is interesting to look at is this:
 
