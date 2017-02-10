@@ -14,15 +14,11 @@ If these are completely new to you have a look at this [tutorial](http://adilmou
 
 I would strongly advise you to get Caffe working with [Docker](https://www.docker.com/products/docker#). Go ahead and install Docker following the instructions in the link. Verify your installations with : `sudo docker run hello-world `
 
-make a new folder for all of this to live in and change into that folder
-```
-mkdir deep_learning_tutorial
-cd deep_learning_tutorial
-``` 
-clone the git repo into your brand new folder:
+clone the git repo into your brand new folder and change into that folder
 
 ```
-git clone ...(get the git)
+git clone https://github.com/mashgin/basic_deep_learning_tutorial.git
+cd basic_deep_learning_tutorial
 ```
 
 build your docker image (deep_caffe) :
