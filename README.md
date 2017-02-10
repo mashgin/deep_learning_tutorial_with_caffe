@@ -1,4 +1,4 @@
-# basic-deep-learning
+# A basic deep learning tutorial with caffe
 
 A basic tutorial on how to understand your first neural net to classify black and white images of circles and squares using caffe. Images like these:
 
