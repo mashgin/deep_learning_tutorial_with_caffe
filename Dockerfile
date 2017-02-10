@@ -1,4 +1,4 @@
-## this guy has a very clean setup for all the dependencies and all that it seems like and it works well, all I added to the image was the python-opencv and uncommented/added sudo to the last line
+#https://hub.docker.com/r/ruimashita/caffe-cpu/ is the original file. Some small modifications, also because the pull doesnt work.
 
 FROM ruimashita/scipy
 
