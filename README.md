@@ -52,7 +52,7 @@ go ahead and run `import caffe` if nothing happens except another prompt `>>>`  
 
 with `ls` you cann see all your directories in your current path. run `cd basic_shapes` to continue! 
 
-*Otherwise you can try installing Caffe with these tutorials for [mac](http://christopher5106.github.io/big/data/2015/07/16/deep-learning-install-caffe-cudnn-cuda-for-digits-python-on-mac-osx.html) or [ubuntu](http://christopher5106.github.io/big/data/2015/07/16/deep-learning-install-caffe-cudnn-cuda-for-digits-python-on-ubuntu-14-04.html). Another way I found (not tested!) is with [AWS](https://github.com/adilmoujahid/deeplearning-cats-dogs-tutorial/blob/master/aws-ec2-setup.md). I was very hesitant to link these, because frankly installing caffe this way is not for the faint hearted. Also, I personally did not get them running this way, so with that you are on your own. *
+*Otherwise you can try installing Caffe with these tutorials for [mac](http://christopher5106.github.io/big/data/2015/07/16/deep-learning-install-caffe-cudnn-cuda-for-digits-python-on-mac-osx.html) or [ubuntu](http://christopher5106.github.io/big/data/2015/07/16/deep-learning-install-caffe-cudnn-cuda-for-digits-python-on-ubuntu-14-04.html). Another way I found (not tested!) is with [AWS](https://github.com/adilmoujahid/deeplearning-cats-dogs-tutorial/blob/master/aws-ec2-setup.md). I was very hesitant to link these, because frankly installing caffe this way is not for the faint hearted. Also, I personally did not get them running this way, so with that you are on your own.*
 
 Now it's time to build your first neural net, train it and use it to distinguish images of circles and squares!
 
