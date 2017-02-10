@@ -21,7 +21,7 @@ git clone https://github.com/mashgin/basic_deep_learning_tutorial.git
 cd basic_deep_learning_tutorial
 ```
 
-build your docker image (deep_caffe) :
+build your docker image (deep_caffe) (currently only for cpu not gpu):
 
 ```
 sudo docker build -t deep_caffe
