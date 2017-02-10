@@ -12,19 +12,59 @@ If these are completely new to you have a look at this [tutorial](http://adilmou
 
 ### Getting Caffe running 
 
-I would strongly advise you to get Caffe working with [Docker](https://www.docker.com/what-docker): 
+I would strongly advise you to get Caffe working with [Docker](https://www.docker.com/products/docker#). Go ahead and install Docker following the instructions in the link. Verify your installations with : `sudo docker run hello-world `
 
-COMING!! :)
+make a new folder for all of this to live in and change into that folder
+```
+mkdir deep_learning_tutorial
+cd deep_learning_tutorial
+``` 
+clone the git repo into your brand new folder:
 
-Otherwise you can try installing Caffe with these tutorials for [mac](http://christopher5106.github.io/big/data/2015/07/16/deep-learning-install-caffe-cudnn-cuda-for-digits-python-on-mac-osx.html) or [ubuntu](http://christopher5106.github.io/big/data/2015/07/16/deep-learning-install-caffe-cudnn-cuda-for-digits-python-on-ubuntu-14-04.html). Another way I found (not tested!) is with [AWS](https://github.com/adilmoujahid/deeplearning-cats-dogs-tutorial/blob/master/aws-ec2-setup.md). I was very hesitant to link these, because frankly installing caffe this way is not for the faint hearted. Also, I personally did not get them running this way, so with that you are on your own. 
+```
+git clone ...(get the git)
+```
 
-Once you have caffe installed or getting it working it’s time to build your first neural net, train it and use it to distinguish images of circles and squares!
+build your docker image (deep_caffe) :
+
+```
+sudo docker build -t deep_caffe
+``` 
+
+run `pwd` to get your full working directory path.
+
+run your newly built docker image in a container with acces to those files you just cloned: 
+
+```
+sudo docker run  -it -v <copy paste you full working directory path here>:/basic_shapes caffe_deep
+```
+
+you should see something like: `root@CONTAINER:/`. This means you are now inside your container with your environemnt where caffe is installed in.
+
+there's a small bug so run `sudo ln /dev/null /dev/raw1394` after getting that container running, to avoid errors when running the files. 
+
+to make sure caffe is properly working go ahead and run `python`. You should see a prompt as such : 
+
+```
+Python 2.7.6 (default, Oct 26 2016, 20:30:19) 
+[GCC 4.8.4] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+```
+
+go ahead and run `import caffe` if nothing happens except another prompt `>>>`  showing up, you're all set! Run `exit()` to get out of python.
+
+with `ls` you cann see all your directories in your current path. run `cd basic_shapes` to continue! 
+
+*Otherwise you can try installing Caffe with these tutorials for [mac](http://christopher5106.github.io/big/data/2015/07/16/deep-learning-install-caffe-cudnn-cuda-for-digits-python-on-mac-osx.html) or [ubuntu](http://christopher5106.github.io/big/data/2015/07/16/deep-learning-install-caffe-cudnn-cuda-for-digits-python-on-ubuntu-14-04.html). Another way I found (not tested!) is with [AWS](https://github.com/adilmoujahid/deeplearning-cats-dogs-tutorial/blob/master/aws-ec2-setup.md). I was very hesitant to link these, because frankly installing caffe this way is not for the faint hearted. Also, I personally did not get them running this way, so with that you are on your own. *
+
+Now it's time to build your first neural net, train it and use it to distinguish images of circles and squares!
 
 Without further a do, let’s just get started!
 
 ### Getting the big picture (Running the programs)
 
-After cloning the git repository you can run the 3 files as follows :
+You can run the 3 files as follows :
 
 ```
 + First, generate network definitions by running:
@@ -40,19 +80,7 @@ After cloning the git repository you can run the 3 files as follows :
     ./classify.py 1
 ```
 
-Go ahead and run the first command `./generate_network.py` . After executing this you will notice a new folder *models* pop up in your working direcotry. If you have a look into that folder, you can see that 4 files are created:
-
-* `train.proto` → stores the training net architectur. 
-
-* `test.proto` → stores the test net architecture.
-
-* `deploy.proto` → exactly the same thing as `test.proto`, but this architecture is needed during the classification phase, not the training phase.
-
-* `solver.proto` → storing information we will need to train our network.
-
-*  (after executing `./train.py`, `weights.proto` will appear as well → stores the weights ('knowledge') learned.) 
-
-These files are [protobuf files](https://developers.google.com/protocol-buffers/docs/overview). Similar to JSON files.
+Go ahead and run the first command `./generate_network.py` .
 
 In your terminal you will see the Network topology. This is showing you the size of your network layers: 
 
@@ -69,6 +97,22 @@ loss (1, 2, 1)
 ==================================================
 ```
 For example the data layer is 4 dimensional. you can think of it as matrix with a size of 1x1x100x100.
+
+Also you will notice a new folder *models* pop up in your working direcotry. If you have a look into that folder `cd models` , you can see that 4 files are created:
+
+* `train.proto` → stores the training net architectur. 
+
+* `test.proto` → stores the test net architecture.
+
+* `deploy.proto` → exactly the same thing as `test.proto`, but this architecture is needed during the classification phase, not the training phase.
+
+* `solver.proto` → storing information we will need to train our network.
+
+*  (after executing `./train.py`, `weights.proto` will appear as well → stores the weights ('knowledge') learned.) 
+
+These files are [protobuf files](https://developers.google.com/protocol-buffers/docs/overview). Similar to JSON files.
+
+go back to your original folder with `cd ..`.
 
 At this point all we have is an empty net architecture. You can imagine it as a new born baby. So let’s teach it something!
 
