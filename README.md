@@ -12,7 +12,7 @@ If these are completely new to you have a look at this [tutorial](http://adilmou
 
 ### Getting Caffe running in Docker
 
-I would strongly advise you to get Caffe working with [Docker](https://www.docker.com/products/docker#). Go ahead and install Docker following the instructions in the link. Verify your installations with : `sudo docker run hello-world `
+I would strongly advise you to get Caffe working with [Docker](https://www.docker.com/products/docker#). Go ahead and install Docker following the instructions in the link. 
 
 clone the git repo into your brand new folder and change into that folder
 
