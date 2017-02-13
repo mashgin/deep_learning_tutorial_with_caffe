@@ -1,0 +1,125 @@
+layer {
+  name: "data"
+  type: "Input"
+  top: "data"
+  input_param {
+    shape {
+      dim: 64
+      dim: 1
+      dim: 100
+      dim: 100
+    }
+  }
+}
+layer {
+  name: "label"
+  type: "Input"
+  top: "label"
+  input_param {
+    shape {
+      dim: 64
+      dim: 1
+    }
+  }
+}
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  convolution_param {
+    num_output: 16
+    kernel_size: 5
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "conv1"
+  top: "conv1"
+}
+layer {
+  name: "pool1"
+  type: "Pooling"
+  bottom: "conv1"
+  top: "pool1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 3
+    stride: 3
+  }
+}
+layer {
+  name: "norm1"
+  type: "LRN"
+  bottom: "pool1"
+  top: "norm1"
+  lrn_param {
+    local_size: 5
+    alpha: 0.0001
+    beta: 0.75
+  }
+}
+layer {
+  name: "fc1"
+  type: "InnerProduct"
+  bottom: "norm1"
+  top: "fc1"
+  inner_product_param {
+    num_output: 64
+    weight_filler {
+      type: "xavier"
+    }
+  }
+}
+layer {
+  name: "fcrelu1"
+  type: "ReLU"
+  bottom: "fc1"
+  top: "fc1"
+}
+layer {
+  name: "drop1"
+  type: "Dropout"
+  bottom: "fc1"
+  top: "fc1"
+  dropout_param {
+    dropout_ratio: 0.25
+  }
+}
+layer {
+  name: "score_all"
+  type: "InnerProduct"
+  bottom: "fc1"
+  top: "score_all"
+  inner_product_param {
+    num_output: 2
+    weight_filler {
+      type: "xavier"
+    }
+  }
+}
+layer {
+  name: "score"
+  type: "Reshape"
+  bottom: "score_all"
+  top: "score"
+  reshape_param {
+    shape {
+      dim: 64
+      dim: 2
+      dim: 1
+    }
+  }
+}
+layer {
+  name: "loss"
+  type: "SoftmaxWithLoss"
+  bottom: "score"
+  bottom: "label"
+  top: "loss"
+}
