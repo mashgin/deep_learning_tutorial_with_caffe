@@ -4,55 +4,11 @@ A basic tutorial on how to understand your first neural net to classify black an
 
 ![circle](/examples/circ_1.png) 		![square](/examples/squ_1.png)
 
-Please bear in mind this is not written by a professional, but by a beginner in deep learning. 
-
-This tutorial assumes you are comfortable with python and have a basic idea of what deep learning is and a rough idea about how it works. Some keywords you should have heard before diving in: neural net, layers, nodes, input/output/hidden layers, weights, labels, backpropagation... 
-
 If these are completely new to you have a look at this [tutorial](http://adilmoujahid.com/posts/2016/06/introduction-deep-learning-python-caffe/). Chapters 1, 2 and 3 helped me out a lot. For those of you who have more time or are more serious about getting into deep learning this [book](http://neuralnetworksanddeeplearning.com/) is very well written. 
 
 ### Getting Caffe running in Docker
 
-I would strongly advise you to get Caffe working with [Docker](https://www.docker.com/products/docker#). Go ahead and install Docker following the instructions in the link. 
-
-clone the git repo into your brand new folder and change into that folder
-
-```
-git clone https://github.com/mashgin/basic_deep_learning_tutorial.git
-cd basic_deep_learning_tutorial
-```
-
-build your docker image (deep_caffe) (currently only for cpu not gpu):
-
-```
-sudo docker build -t deep_caffe
-``` 
-
-run `pwd` to get your full working directory path.
-
-run your newly built docker image in a container with acces to those files you just cloned: 
-
-```
-sudo docker run  -it -v <copy paste you full working directory path here>:/basic_shapes caffe_deep
-```
-
-you should see something like: `root@CONTAINER:/`. This means you are now inside your container with your environemnt where caffe is installed in.
-
-there's a small bug so run `sudo ln /dev/null /dev/raw1394` after getting that container running, to avoid errors when running the files. 
-
-to make sure caffe is properly working go ahead and run `python`. You should see a prompt as such : 
-
-```
-Python 2.7.6 (default, Oct 26 2016, 20:30:19) 
-[GCC 4.8.4] on linux2
-Type "help", "copyright", "credits" or "license" for more information.
->>> 
-```
-
-go ahead and run `import caffe` if nothing happens except another prompt `>>>`  showing up, you're all set! Run `exit()` to get out of python.
-
-with `ls` you cann see all your directories in your current path. run `cd basic_shapes` to continue! 
-
-*Otherwise you can try installing Caffe with these tutorials for [mac](http://christopher5106.github.io/big/data/2015/07/16/deep-learning-install-caffe-cudnn-cuda-for-digits-python-on-mac-osx.html) or [ubuntu](http://christopher5106.github.io/big/data/2015/07/16/deep-learning-install-caffe-cudnn-cuda-for-digits-python-on-ubuntu-14-04.html). Another way I found (not tested!) is with [AWS](https://github.com/adilmoujahid/deeplearning-cats-dogs-tutorial/blob/master/aws-ec2-setup.md). I was very hesitant to link these, because frankly installing caffe this way is not for the faint hearted. Also, I personally did not get them running this way, so with that you are on your own.*
+I would strongly advise you to get Caffe working with [Docker](https://www.docker.com/products/docker#). Go ahead and install Docker following the instructions in the link. Go ahead and create an image with the Docker file in the repo, run a container with the image and the files mounted in the container. If you're having trouble with this see the [Docker.md](https://github.com/mashgin/deep_learning_tutorial_with_caffe/blob/master/Docker.md) for more detailed instructions.
 
 Now it's time to build your first neural net, train it and use it to distinguish images of circles and squares!
 
