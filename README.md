@@ -4,11 +4,11 @@ A basic tutorial on how to understand your first neural net to classify black an
 
 ![circle](/examples/circ_1.png) 		![square](/examples/squ_1.png)
 
-If these are completely new to you have a look at this [tutorial](http://adilmoujahid.com/posts/2016/06/introduction-deep-learning-python-caffe/). Chapters 1, 2 and 3 helped me out a lot. For those of you who have more time or are more serious about getting into deep learning this [book](http://neuralnetworksanddeeplearning.com/) is very well written. 
+If concepts like neural nets, layers, nodes, backpropagation ... are completely new to you I recommend having a look at this [tutorial](http://adilmoujahid.com/posts/2016/06/introduction-deep-learning-python-caffe/). Chapters 1, 2 and 3 helped me out a lot. For those of you who have more time or are more serious about getting into deep learning this [book](http://neuralnetworksanddeeplearning.com/) is very well written. 
 
 ### Getting Caffe running in Docker
 
-I would strongly advise you to get Caffe working with [Docker](https://www.docker.com/products/docker#). Go ahead and install Docker following the instructions in the link. Go ahead and create an image with the Docker file in the repo, run a container with the image and the files mounted in the container. If you're having trouble with this see the [Docker.md](https://github.com/mashgin/deep_learning_tutorial_with_caffe/blob/master/Docker.md) for more detailed instructions.
+I would strongly advise you to get Caffe working with Docker. Go ahead and install [Docker](https://www.docker.com/products/docker#). Create an image with the Docker file in the repo, run a container with the image and the python files from the repo mounted in the container. If you're having trouble with this see the [Docker.md](https://github.com/mashgin/deep_learning_tutorial_with_caffe/blob/master/Docker.md) for more detailed instructions.
 
 Now it's time to build your first neural net, train it and use it to distinguish images of circles and squares!
 
