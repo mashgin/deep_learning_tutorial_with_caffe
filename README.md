@@ -11,6 +11,8 @@
 
 * run `./train.py`. You're network is now trained and ready for classification
 
+* ignore the `libdc1394 error: Failed to initialize libdc1394`
+
 ### Step 3: Run Classification
 
 * run `./classify.py ` 
