@@ -11,8 +11,8 @@ caffe.set_mode_cpu()
 solver = caffe.get_solver('models/solver.proto')
 solver.random_seed = 0xCAFFE
 
-n_iter = 1000
-test_interval = 100
+n_iter = 500
+test_interval = 20
 
 '''
 	Main solver loop.
