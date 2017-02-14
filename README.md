@@ -1,4 +1,32 @@
-# A basic deep learning tutorial with caffe
+# A very simple deep learning Tutorial :
+## Run your first neural net training in 5 min.
+
+### Step 1: Run the docker image in a docker container.
+
+* Install  [Docker](https://www.docker.com/products/docker#). 
+
+* Pull and run docker image: `sudo docker run -it mashgin/deep_learning_tutorial`
+
+### Step 2 : Train your Network
+
+* run `./train.py`. You're network is now trained and ready for classification
+
+### Step 3: Run Classification
+
+* run `./classify.py ` 
+
+### Step 4: Visualize live Classification results. 
+
+to see the images we are classifying we need to:
+
+* `exit`  out of the container. 
+
+* give permission: `xhost +local:docker` 
+* give access: `sudo docker run -it --env="DISPLAY"  --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" <image name>` 
+
+* visualize: `./classify.py 1` (hit any key for next image)
+
+
 
 A basic tutorial on how to understand your first neural net to classify black and white images of circles and squares using caffe. Images like these:
 
